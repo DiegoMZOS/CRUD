@@ -1,0 +1,50 @@
+﻿@model List<CRUD.Models.Contacto>
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top: 30px">
+    <div class="col-sm-12">
+
+        <div class="card card-warning">
+            <div class="card-header">
+                <h4>Lista de Contactos</h4>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-success">Crear Nuevo</a>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <!-- Filas se define con tr -->
+                            <!-- Columnas se especifica con th -->
+                            <tr>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Telefono</th>
+                                <th>Correo</th>
+                                <th style="width:150px"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (CRUD.Models.Contacto item in Model) { 
+                                <tr>  
+                                    <td>@item.Nombres</td>
+                                    <td>@item.Apellidos</td>
+                                    <td>@item.Correo</td>
+                                    <td>@item.Telefono</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm">Editar</a>
+                                        <a class="btn btn-danger btn-sm">Eliminar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
